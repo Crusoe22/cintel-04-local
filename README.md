@@ -35,3 +35,13 @@ Create a project virtual environment in the .venv folder of the project root dir
   ```shell
   py -m venv .venv
   ```
+
+## Run app
+shiny run --reload --launch-browser penguins/app.py
+
+### Build app to docs folder
+shiny static-assets remove
+shinylive export penguins docs
+
+### Serve the app
+py -m http.server --directory docs --bind localhost 8008
